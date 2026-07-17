@@ -8,15 +8,16 @@ class BookImageHListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: AspectRatio(
-        aspectRatio: 2.7/4,
+        aspectRatio: 2.6 / 4,
         child: Container(
           height: 100,
           width: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image:const DecorationImage(
+            image: const DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(AssetsData.testImage)),
+              image: AssetImage(AssetsData.testImage),
+            ),
           ),
         ),
       ),
