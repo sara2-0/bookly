@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/home_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_image_h_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeListView extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomeListView extends StatelessWidget {
         itemBuilder: (context,index){
         return const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: HomeListViewItem(),
+          child: BookImageHListViewItem(),
         );
       }),
     );
