@@ -1,14 +1,18 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utiles/app_routes.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
 
   runApp(const BooklyApp());
+  Hive.registerAdapter(BookEntityAdapter());
+  Hive.openBox(kFeaturedBooks);
 }
 
 class BooklyApp extends StatelessWidget {
