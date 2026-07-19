@@ -11,6 +11,7 @@ Future<void> main() async {
   await dotenv.load(fileName: ".env");
 
   runApp(const BooklyApp());
+  Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   Hive.openBox(kFeaturedBooks);
 }
