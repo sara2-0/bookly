@@ -9,11 +9,12 @@ import 'package:hive_flutter/adapters.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
+  await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox<BookEntity>(kFeaturedBooks);
+  await Hive.openBox<BookEntity>(kNewestBooks);
 
   runApp(const BooklyApp());
-  Hive.initFlutter();
-  Hive.registerAdapter(BookEntityAdapter());
-  Hive.openBox(kFeaturedBooks);
 }
 
 class BooklyApp extends StatelessWidget {
