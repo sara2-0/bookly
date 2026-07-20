@@ -13,8 +13,8 @@ final class FeaturedBooksFailure extends FeaturedBooksState {
   FeaturedBooksFailure(this.errMessage);
 }
 
-final class FeaturedBookSuccess extends FeaturedBooksState {
+final class FeaturedBooksSuccess extends FeaturedBooksState {
   final List<BookEntity> books;
 
-  FeaturedBookSuccess(this.books);
+  FeaturedBooksSuccess(this.books);
 }
