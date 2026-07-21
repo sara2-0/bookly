@@ -33,6 +33,8 @@ class ServerFailure extends Failure {
     }
   }
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
+    print('Status Code: $statusCode');
+    print('Response: $response');
     if (statusCode == 404) {
       return ServerFailure('Your request was not found, please try later');
     } else if (statusCode == 500) {
